@@ -1,0 +1,20 @@
+footer {
+    text-align: center;
+    padding: 20px;
+    color: black;
+}
+
+.footer-icons a {
+    margin: 0 10px; /* Adjust spacing around icons */
+    display: inline-block; /* Align icons inline */
+}
+
+.footer-icons img {
+    width: 40px; /* Adjust icon size */
+    height: auto;
+}
+
+.footer-text {
+    margin-top: 20px; /* Space above the text */
+    padding-bottom: 2rem;
+}

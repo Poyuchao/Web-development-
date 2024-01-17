@@ -1,0 +1,100 @@
+.skills-section {
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto; /* Centers the section */
+    padding: 4rem 0; /* Add space above and below the section */
+  
+}
+
+.skills-section h1 {
+    font-size:xx-large;
+    margin-bottom: 2rem; /* Space below the section title */
+    text-decoration: underline;
+    text-decoration-color: gold; /* Color for the underline */
+    text-align:center
+}
+
+.row{
+    margin: 1rem 0;
+    /* A shorthand property for the grid-template-rows, grid-template-columns,
+     grid-template-areas, grid-auto-rows, grid-auto-columns, and the grid-auto-flow properties */
+    display:grid;
+    /* This property is part of the CSS Grid Layout. 
+    It specifies the size of the columns in a grid container. */
+    grid-template-columns: repeat(2,1fr);
+    grid-gap:2rem;
+}
+
+.item-text{
+    display:flex;
+    justify-content: flex-start;
+    font-weight:600;
+    font-size:1.3rem;
+    position:relative;
+}
+
+.item-text span:last-child{
+    position: absolute;
+}
+
+.item-text .w-90{
+    margin-left:90%;
+}
+
+.item-text .w-80{
+    margin-left:80%;
+}
+
+.item-text .w-70{
+    margin-left:70%;
+}
+
+.item-text .w-85{
+    margin-left:85%;
+}
+
+.progress {
+    margin: 0.8rem 0;
+    border-radius: 10px;
+    height: 16px;
+    width:100%;
+    background-color: grey;
+    overflow:hidden;
+   
+}
+
+.progress-bar{
+    background-color: #79463b;
+    height:100%;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.progress-bar.w-90{
+    width:90%
+}
+
+
+.progress-bar.w-80{
+    width:80%
+}
+
+
+.progress-bar.w-70{
+    width:70%
+}
+
+
+.progress-bar.w-85{
+    width:85%
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .row {
+        grid-template-columns: 1fr; /* 1 column on smaller screens */
+    }
+
+
+}
+

@@ -1,0 +1,19 @@
+html, body {
+    height: 100%;
+    padding:0;
+    margin: 0;
+}
+/* This CSS property tells the browser to animate the scrolling action smoothly rather than jumping directly to the section. */
+html {
+    scroll-behavior: smooth;
+  }
+  
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
