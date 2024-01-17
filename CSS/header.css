@@ -1,0 +1,64 @@
+header {
+  border-radius: 1 rem;
+ 
+}
+
+.nav {
+  display: flex; /* Flex container for the navigation */
+  align-items: center;
+  justify-content: space-between;
+}
+
+.name {
+/* Inline-block for name for specific alignment  allowing it to be laid
+ out like an inline element while accepting block-level properties like padding and margin*/
+  display: inline-block; 
+  padding: 14px 8rem;
+
+}
+
+.name a {
+  font-size: larger;
+  color: black;
+  text-decoration: none;
+  font-family: "Lucida Console", "Courier New", monospace;
+  transition: color 0.3s ease; /* Transition effect for color change */
+}
+
+.name a:hover {
+  color: orange
+}
+
+
+ul {
+  display: inline-block; /* Make the UL an inline-block element */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* background-color: Lavender; */
+  margin-right: 2rem;
+}
+
+li {
+  display: inline; /* Each LI as an inline element making the list items flow in line with each other.*/
+  float: left;
+
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 1.5rem;
+  text-decoration: none;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: larger;
+  transition: color 0.4s ease; /* Transition effect for color change */
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  color: orange;
+}
+

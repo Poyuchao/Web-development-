@@ -1,0 +1,87 @@
+.projects-section {
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto; /* Centers the section */
+    padding: 4rem 0; /* Add space above and below the section */
+  
+}
+
+.projects-section h1 {
+    font-size:xx-large;
+    margin-bottom: 2rem; /* Space below the section title */
+    text-decoration: underline;
+    text-decoration-color: gold; /* Color for the underline */
+    text-align:center
+}
+
+.project-card{
+    display:flex;
+    align-items:left;  /* Vertically aligns the text and image */
+    justify-content: space-between; /* Space between text and image */
+    gap:2rem;  /*add gap between text and image */ 
+    margin-bottom: 2rem; /* Space between project cards if you have multiple */
+    background: #fff; /* Background color for the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
+    padding: 2rem; /* Padding inside the card */
+    border-radius: 8px; /* Rounded corners for the card */
+}
+
+.project-text {
+    flex-basis: 50%; /* Takes up half the width of the card */
+    margin-top:3rem;
+}
+
+
+.project-image {
+    flex-basis: 50%; /* Takes up the other half */
+}
+
+.project-image img {
+    max-width: 600px; /* Ensures the image is responsive */
+    height: 400px;
+    border-radius: 8px; /* Optional: if you want rounded corners for the image */
+    
+}
+
+.moveButton{
+    margin-top:2rem;
+   
+}
+.button {
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: 2px solid black;
+    /* Adds a black border */
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+}
+
+.buttons .button:hover {
+    background-color: orange;
+    border: none;
+}
+/* For responsiveness, consider using media queries to adjust layout on smaller screens. */
+
+@media screen and (max-width: 768px) {
+    .project-card {
+        flex-direction: column; /* Stack the children vertically */
+    }
+
+    .project-text, .project-image {
+        /* These lines are not strictly necessary if the default width is already 100%, but they are included here for clarity */
+        width: 100%; /* Set the width to full container width */
+        flex-basis: auto; /* Reset flex-basis to default */
+    }
+
+    .project-image {
+        order: 1; /* The image will come after the text (which has a default order of 0) */
+    }
+
+    .project-text {
+        order: 0; /* Make sure text comes first */
+    }
+}

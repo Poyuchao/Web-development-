@@ -1,0 +1,94 @@
+
+.about-me {
+
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    gap:4rem;
+    padding: 8rem;
+  
+    
+}
+
+
+.content {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    flex:1;
+   
+}
+
+h1 {
+    color: #333;
+    font-size: 3rem;
+}
+
+p {
+    color: #666;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.company-link {
+    text-decoration: none; /* This removes the underline */
+    /* Additional styles, if desired, e.g., text color */
+}
+
+
+.resume-button {
+   
+    background-color: #FFD700; /* Gold color */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    width:15.5%;
+    
+}
+
+.profile-picture {
+    margin-left: 20px;
+    flex:1;
+}
+
+.profile-picture img {
+    width: 500px; /* You can adjust as needed */
+    height: 500px;
+    border-radius: 50%;
+    background-color: #FFC107; /* Amber color for the circle */
+    float:right; /* move the image to the right of it container*/
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .about-me {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .content, .profile-picture {
+      flex: none;
+      width: 100%;
+      padding: 0 10px; /* Add some padding on the sides */
+    }
+  
+    .profile-picture img {
+      max-width: 100%; /* Ensure image is not larger than the container */
+      height: auto;
+    }
+
+    .resume-button {
+        margin-left: auto; /* Center the button */
+        margin-right: auto; /* Center the button */
+        display: block; /* Ensure the button is a block-level element */
+        width: auto; /* Reset the width to auto */
+    }
+
+  
+  }

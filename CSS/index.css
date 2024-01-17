@@ -1,0 +1,158 @@
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:4rem;
+    padding: 8rem;
+}
+
+.text-section {
+    width: 50%;
+}
+
+.text-section h3 {
+    margin-bottom: 10px;
+    color: olive;
+    font-weight: bolder;
+}
+
+.text-section h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.name-highlight {
+    color: #333;
+    /* Or any color you want */
+    display: inline;
+    /* Keeps the span inline */
+    animation: none;
+    /* If you don't want the highlight to animate separately */
+}
+
+.typing-animation {
+    /* ensures that the content of the element doesn't wrap to a new line. */
+    white-space: nowrap;
+    /* hides any overflowed content outside the element's box, which is crucial for the typing effect. */
+    overflow: hidden;
+    /* Ensures the content doesn't wrap */
+    border-right: .15em solid orange; /* The typewriter cursor */
+    /* The typewriter cursor */
+    width: 0;
+    /* animates the width from 0 to 100% over 3.5 seconds in 40 steps,
+     revealing the text as if it's being typed. */
+     /* creates the blinking cursor effect, which starts after 3.5 seconds 
+     (when the typing animation ends) and continues infinitely. */
+     /* starts 4 seconds after the element is rendered (0.5s after the cursor 
+     starts blinking) and animates the cursor's border color to transparent 
+     over 1 second, making it disappear. */
+    animation: typing 3.5s steps(40, end) forwards,
+               blink-caret .75s step-end 3.5s,
+               fadeOutCursor 1s 4s forwards;
+}
+
+
+
+/* Typing keyframe - Controls the typing animation.*/
+@keyframes typing {
+    /* starts the animation with the element's width at 0. */
+    from {
+        width: 0;
+    }
+    /* ends the animation with the element's width at 100%, revealing all the text. */
+    to {
+        width: 100%;
+    }
+}
+
+/* Cursor animations- Controls the blink-caret (cursor blinking) animation. */
+@keyframes blink-caret {
+    /* sets the cursor border color to transparent at the start 
+    and end of the animation cycle. */
+    from, to { border-color: transparent; }
+    /* sets the cursor border color to orange midway through the animation 
+    cycle, creating a blinking effect. */
+    50% { border-color: orange; }
+}
+
+/* Controls the fadeOutCursor animation. */
+@keyframes fadeOutCursor {
+    /* animates the cursor's border color to transparent, 
+    effectively making the cursor disappear. */
+    to { border-color: transparent; }
+}
+
+
+.text-section p {
+    margin-bottom: 40px;
+    color: #333;
+    font-size: 18px;
+}
+
+.buttons .button {
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: 2px solid black;
+    /* Adds a black border */
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.buttons .button:hover {
+    background-color: orange;
+    border: none;
+}
+
+.image-section {
+    width: 50%;
+    position: relative;
+    /* If you're using absolute positioning on the image */
+    
+
+}
+
+.image-section img {
+    width: 80%;
+    /* Make the image fill the container */
+    height: auto;
+    /* Maintain the aspect ratio */
+    object-fit: cover;
+    /* This will cover the area, could be changed to 'contain' based on your needs */
+    border-radius: 25px;
+    border:solid black;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .hero-section, .projects-section {
+        flex-direction: column;
+    }
+
+    .image-section, .text-section, .project-text, .project-image {
+        width: 100%;
+    }
+
+    .buttons .button {
+        margin: 10px 0; /* Stack buttons on top of each other with space in between */
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column; /* Stack buttons vertically */
+    }
+
+    .buttons .button {
+        width: 45%; /* Full width for buttons */
+        margin-right: 0; /* Remove the right margin if any */
+        margin-bottom: 10px; /* Add some space between the buttons */
+    }
+
+    /* Remove margin from the last button to prevent extra space */
+    .buttons .button:last-child {
+        margin-bottom: 0;
+    }
+}
