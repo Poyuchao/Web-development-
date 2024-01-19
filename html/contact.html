@@ -58,6 +58,7 @@
                 </div>
                 <button type="submit" class="submit-button">Send Message</button>
             </form>
+            
         </div>
         
     </main>
@@ -73,6 +74,13 @@
             Po Yu Chao © 2024
         </div>
     </footer>
+
+      <!-- JavaScript -->
+      <script>
+        document.querySelector('.submit-button').addEventListener('click', function() {
+            this.classList.toggle('clicked');
+        });
+    </script>
 </body>
 
 </html>
