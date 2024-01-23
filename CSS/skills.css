@@ -1,5 +1,5 @@
 .skills-section {
-    max-width: 800px; /* Adjust as needed */
+    max-width: 1000px; /* Adjust as needed */
     margin: 0 auto; /* Centers the section */
     padding: 4rem 0; /* Add space above and below the section */
   
@@ -93,6 +93,10 @@
 @media screen and (max-width: 768px) {
     .row {
         grid-template-columns: 1fr; /* 1 column on smaller screens */
+    }
+    .skills-section {
+        max-width:80%; /* Adjust the width to 90% of the viewport width */
+        padding: 2rem 0; /* Optionally, adjust the padding for smaller screens */
     }
 
 
