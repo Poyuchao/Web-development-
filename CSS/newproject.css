@@ -91,12 +91,15 @@
 #slides .slide_project2 .slide-content h2 {
     position: relative;
     top: 10px; /* Adjust this value as needed */
+    font-weight: bold;
+    
 }
 
 
 #slides .slide_project1 .slide-content p,
 #slides .slide_project2 .slide-content p{
    font-size: 18px;
+   font-weight: bold;
    
 }
 
@@ -144,6 +147,7 @@
     justify-content: center;
     gap:2rem;
     
+    
 }
 
 #controls button{
@@ -186,7 +190,17 @@
         height: 32px; /* Set the height to your desired size */
     }
 
+    #slides .slide_project1 .slide-content h2,
+    #slides .slide_project2 .slide-content h2 {
+        font-size: calc(12px + 1.5vw); /* Adjust as needed */
+    }
 
+    #slides .slide_project1 .slide-content p,
+    #slides .slide_project2 .slide-content p {
+        position:relative;
+        top:10px;
+        font-size: calc(10px + 1vw); /* Adjust as needed */
+    }
   
 }
    
