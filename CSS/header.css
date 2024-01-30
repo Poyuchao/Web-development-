@@ -14,7 +14,7 @@ header {
  out like an inline element while accepting block-level properties like padding and margin*/
   display: inline-block; 
   padding: 14px 8rem;
-
+  
 }
 
 .name a {
@@ -23,13 +23,14 @@ header {
   text-decoration: none;
   font-family: "Lucida Console", "Courier New", monospace;
   transition: color 0.3s ease; /* Transition effect for color change */
+  white-space: nowrap;
 }
 
 .name a:hover {
   color: orange
 }
 
-
+/* Navigation bar */
 ul {
   display: inline-block; /* Make the UL an inline-block element */
   list-style-type: none;
@@ -39,6 +40,7 @@ ul {
   /* background-color: Lavender; */
   margin-right: 2rem;
 }
+
 
 li {
   display: inline; /* Each LI as an inline element making the list items flow in line with each other.*/
@@ -60,5 +62,74 @@ li a {
 /* Change the link color to #111 (black) on hover */
 li a:hover {
   color: orange;
+}
+
+
+/*Navigation side bar */
+
+.sidebar{
+  
+  position:fixed;
+  top:0;
+  right:0;
+  height:32vh;
+  width:200px;
+  z-index:999;
+  background-color:rgb(253, 253, 253);
+  backdrop-filter: blur(10px);
+  box-shadow:-10px 0 10px rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  display:none;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:flex-start;
+  
+}
+
+.sidebar li{
+  width: 100%;
+}
+
+.sidebar a{
+  width:100%;
+}
+
+.hamburger_menu{
+  display:none;
+}
+
+.menu_button {
+  display:none;
+}
+/* Responsive design for screens between 430px and 932px fit 14 pro max*/
+@media screen and  (max-width: 932px) {
+  
+  .name {
+    margin-left: -70px; /* Adjust the value as needed to move text a bit to the left */
+    white-space: nowrap; /* Prevent the text from wrapping */
+  }
+
+  .hideOnMobile{
+    display:none;
+  }
+
+  .hamburger_menu{
+    margin-left: 30px;
+    
+  }
+  
+  .menu_button{
+    display :block;
+  }
+
+  .sidebar{
+    width:92%;
+    opacity: 0.7;
+    
+  }
+
+ 
+
+ 
 }
 

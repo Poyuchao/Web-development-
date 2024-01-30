@@ -1,0 +1,194 @@
+.projects-section {
+    max-width: 1200px; /* Adjust as needed */
+    margin: auto auto; /* Centers the section */
+    padding: 4rem 0; /* Add space above and below the section */
+   
+}
+
+.projects-section h1 {
+    font-size:xx-large;
+    margin-bottom: 2rem; /* Space below the section title */
+    text-decoration: underline;
+    text-decoration-color: gold; /* Color for the underline */
+    text-align:center
+}
+
+
+#slider{
+    margin:0 auto;
+    width:920px;
+    max-width:100%;
+    font-family:"Poppins", sans-serif;
+}
+
+#slider input[type=radio]{
+    display:none;
+}
+
+#slider label{
+    cursor:pointer;
+    text-decoration: none;
+}
+
+#slides{
+    padding:20px 20px;
+    border:3px solid #ccc;
+    background:#fff;
+    position:relative;
+    z-index:1;
+    border-radius:10px;
+}
+
+#overflow {
+
+    width:100%;
+    overflow:hidden;
+
+}
+
+#slide1:checked ~ #slides .inner{
+    margin-left:0;
+}
+
+
+#slide2:checked ~ #slides .inner{
+    margin-left:-100%;
+}
+
+#slides .inner{
+    transition:margin-left 800ms cubic-bezier(0.770,0.000,0.175,1.000);
+    width:200%;
+    line-height:0;
+    height:450px;
+}
+
+#slides .slide{
+    width:50%;
+    float:left;
+    display:block;
+    height:100%;
+    color:black;
+    border-radius: 10px;
+  
+}
+
+#slides .slide_project1{
+    background: url("../project photo/foodieSeattle.jpg") no-repeat center top;
+    background-size: 100% 75%;
+    position: relative;
+
+}
+
+#slides .slide_project1 .slide-content {
+    position:relative;
+    text-align: center;
+    top:340px;
+    display:flex;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+#slides .slide_project1 .slide-content h2,
+#slides .slide_project2 .slide-content h2 {
+    position: relative;
+    top: 10px; /* Adjust this value as needed */
+}
+
+
+#slides .slide_project1 .slide-content p,
+#slides .slide_project2 .slide-content p{
+   font-size: 18px;
+   
+}
+
+
+
+#slides .slide_project2{
+    background: url("../project photo/Taiwan good stuff.png") no-repeat center top;
+    background-size: 60% 75%;
+    position: relative;
+    
+}
+
+#slides .slide_project2 .slide-content {
+    position:relative;
+    text-align: center;
+    top:340px;
+    display:flex;
+    flex-direction: column;
+    font-family: sans-serif;
+  
+}
+
+
+
+
+/* Button navigate to project  */
+ #slides .slide-content .view_project{
+    transition: transform 0.3s ease; /* Smooth transition for the transform property */
+    margin-left:20px;
+
+    width: 32px; /* Set the width to your desired size */
+    height: 32px; /* Set the height to your desired size */
+}
+
+.view_project:hover {
+    transform: scale(1.2); /* Scales up the image by 20% on hover */
+}
+
+
+
+/* left and right button */
+#controls {
+    padding:20px;
+    display:flex;
+    justify-content: center;
+    gap:2rem;
+    
+}
+
+#controls button{
+    border:none;
+    background: none;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Animation for smooth scaling */
+}
+
+
+#controls button:hover {
+    transform: scale(1.1); /* Increase the size by 10% when hovered */
+}
+
+
+
+/* break points */
+
+@media only screen and (max-width: 992px) {
+
+    .projects-section {
+        display:flex;
+        flex-direction: column;
+    }
+    
+    #slider {
+        width:80%;
+    }
+
+    #slide{
+        min-width:440px;
+    }
+    
+    #slides .slide-content .view_project{
+        position:relative;
+        transition: transform 0.3s ease; /* Smooth transition for the transform property */
+        margin-left:25px;
+        top:10px;
+        width: 32px; /* Set the width to your desired size */
+        height: 32px; /* Set the height to your desired size */
+    }
+
+
+  
+}
+   
+
+

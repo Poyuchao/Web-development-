@@ -3,11 +3,12 @@
     align-items: center;
     justify-content: space-between;
     gap:4rem;
-    padding: 8rem;
+    padding: 8rem 10rem;
+    /* border:solid red; */
 }
 
 .text-section {
-    width: 50%;
+    width: 60%;
 }
 
 .text-section h3 {
@@ -17,7 +18,7 @@
 }
 
 .text-section h1 {
-    font-size: 50px;
+    font-size: 40px;
     margin-bottom: 20px;
 }
 
@@ -84,22 +85,30 @@
 
 
 .text-section p {
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     color: #333;
-    font-size: 18px;
+    font-size: 20px; /* Adjusted for smooth scaling */
 }
 
+
+
 .buttons .button {
+    flex: 0; /* Give the buttons equal width */
+    min-width: 130px; /* Minimum width for buttons */
+    padding: 10px 20px; /* Padding inside the button */
+    box-sizing: border-box; /* Include padding and border in the button's size */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+    border: 2px solid black; /* Border for the button */
+    border-radius: 30px; /* Rounded corners for the button */
+    text-align: center; /* Center the text */
     background-color: #fff;
     color: #333;
     text-decoration: none;
-    padding: 10px 20px;
-    margin-right: 10px;
-    border: 2px solid black;
-    /* Adds a black border */
-    border-radius: 30px;
     cursor: pointer;
     transition: all 0.3s ease;
+   
 }
 
 .buttons .button:hover {
@@ -108,7 +117,7 @@
 }
 
 .image-section {
-    width: 50%;
+    width: 40%;
     position: relative;
     /* If you're using absolute positioning on the image */
     
@@ -116,43 +125,133 @@
 }
 
 .image-section img {
-    width: 80%;
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+    width: 90%;
     /* Make the image fill the container */
-    height: auto;
+    height: 80%;
     /* Maintain the aspect ratio */
     object-fit: cover;
     /* This will cover the area, could be changed to 'contain' based on your needs */
     border-radius: 25px;
-    border:solid black;
+    
 }
 
+.image-section:hover img {
+    transform: scale(1.05); /* Zooms in the image slightly */
+}
+
+@keyframes imagefromleft {
+    from {
+      
+        transform: translateX(-100%) rotate(0);
+        opacity: 0;
+        filter: blur(5px);
+        border-radius: 50%;
+    }
+    to {
+        transform: translateX(0) rotate(360deg);
+        opacity: 1;
+        filter: blur(0);
+        border-radius: 0;
+    }
+}
+
+.image-section {
+    
+   animation-name: imagefromleft;
+   animation-duration:2s;
+   animation-timing-function:ease-in;
+   animation-delay:0s;
+   animation-iteration-count:1;
+   animation-direction:normal;
+   animation-fill-mode:none;
+  
+
+}
+
+/* breakpoint */
+@media only screen and (max-width:992px) {
+    .hero-section {
+      
+        display:flex;
+       
+    }
+
+   
+
+    .text-section h1{
+        font-size:20px;
+    }
+
+    .text-section p{
+        font-size:17px;
+    }
+
+    .image-section{
+        min-width:200px;
+        width: calc(40% + 20px); /* Adjust the percentage and pixel values as needed */
+        display:flex;
+        justify-content: center;
+    }
+
+    .buttons{
+       display:flex;
+       gap:1rem;
+    }
+    
+
+}
 
 @media only screen and (max-width: 768px) {
-    .hero-section, .projects-section {
+    .hero-section{
+      
         flex-direction: column;
+        gap: 2rem 0;
     }
 
-    .image-section, .text-section, .project-text, .project-image {
-        width: 100%;
+    .projects-section{
+        flex-direction:column;
+    } 
+
+    .text-section, .project-text, .project-image {
+        width: auto;
+        
     }
 
-    .buttons .button {
-        margin: 10px 0; /* Stack buttons on top of each other with space in between */
+    .text-section{
+        margin-left:10%;
     }
+    .text-section h1{
+        font-size:25px;
+    }
+
+    .image-section{
+        width: calc(60% + 15px); /* Adjust for smaller screens */
+        min-width:250px;
+        min-height:250px;
+        display:flex;
+        justify-content: center;
+    }
+    
+
+  
+
 
     .buttons {
         display: flex;
-        flex-direction: column; /* Stack buttons vertically */
+        gap:2rem;
+        width:100%;
+        text-align: center;
     }
+
+  
 
     .buttons .button {
-        width: 45%; /* Full width for buttons */
-        margin-right: 0; /* Remove the right margin if any */
-        margin-bottom: 10px; /* Add some space between the buttons */
+        width: auto; /* Auto width for full-width buttons on smaller screens */
+        margin: 10px 0; /* Space between stacked buttons */
+        flex: none; /* Disable flexbox to allow buttons to take auto width */
+
     }
 
-    /* Remove margin from the last button to prevent extra space */
-    .buttons .button:last-child {
-        margin-bottom: 0;
-    }
+    
 }
