@@ -1,5 +1,5 @@
 .skills-section {
-    max-width: 1000px; /* Adjust as needed */
+    max-width: 75%; /* Adjust as needed */
     margin: 0 auto; /* Centers the section */
     padding: 4rem 0; /* Add space above and below the section */
   
@@ -9,7 +9,7 @@
     font-size:xx-large;
     margin-bottom: 2rem; /* Space below the section title */
     text-decoration: underline;
-    text-decoration-color: gold; /* Color for the underline */
+    text-decoration-color: #d13639; /* Color for the underline */
     text-align:center
 }
 
@@ -57,13 +57,13 @@
     border-radius: 10px;
     height: 16px;
     width:100%;
-    background-color: grey;
+    background-color: #282828;
     overflow:hidden;
    
 }
 
 .progress-bar{
-    background-color: #79463b;
+    background-color: #d13639;
     height:100%;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
@@ -88,7 +88,48 @@
     width:85%
 }
 
+/* Animation for different progress widths */
+.progress-bar.w-90{
 
+    /* This is the timing function for the animation. 
+    It causes the animation to start slowly, speed up in the middle, 
+    and then slow down again towards the end, creating a smooth effect. */
+
+    animation: fillBar90 2s ease-in-out;
+
+}
+
+.progress-bar.w-80{
+    animation:fillBar80 2s ease-in-out;
+}
+
+.progress-bar.w-70 {
+    animation: fillBar70 2s ease-in-out;
+}
+
+.progress-bar.w-85 {
+    animation: fillBar85 2s ease-in-out;
+}
+/* Keyframes for different progress percentages */
+@keyframes fillBar90 {
+    from { width: 0; }
+    to { width: 90%; }
+}
+
+@keyframes fillBar80{
+    from{width:0;}
+    to {width:80%;}
+}
+
+@keyframes fillBar70{
+    from {width: 0;}
+    to {width: 70%; }
+}
+
+@keyframes fillBar85{
+    from {width: 0;}
+    to {width: 85%; }
+}
 /* Responsive adjustments for smaller screens */
 @media screen and (max-width: 768px) {
     .row {
