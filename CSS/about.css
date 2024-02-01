@@ -13,6 +13,7 @@ body.night-mode {
 }
 body{
     background-color: var(--background-color);
+    transition: background-color 0.3s ease; /* Smooth transition for the background color */
 }
 .about-me {
     display: flex;
@@ -48,8 +49,9 @@ body{
 }
 
 .resume-button {
-    background-color: black; /* Gold color */
-    color: white; /* Text color */
+    background-color: var(--text-color); /* Gold color */
+    transition: background-color 0.3s ease; /* Smooth transition for the background color */
+    color: var(--background-color); /* Text color */
     padding: 15px 30px;
     text-decoration: none;
     border: none;
@@ -61,6 +63,7 @@ body{
     border: 2px solid black; /* Border for the button */
     top:1rem;
     font-weight:bold;
+    
 }
 
 .resume-button:hover{
