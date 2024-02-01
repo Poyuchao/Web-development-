@@ -27,7 +27,11 @@
 
 }
 
-
+/* day and night button */
+#day-night {
+    cursor: pointer;
+ 
+}
 
 @keyframes flyRight {
     from {

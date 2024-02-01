@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../CSS/header.css">
+    <link rel="stylesheet" href="../CSS/newheader.css">
+    <!-- <link rel="stylesheet" href="../CSS/header.css"> -->
     <link rel="stylesheet" href="../CSS/footer.css">
     <link rel="stylesheet" href="../CSS/body.css">
     <link rel="stylesheet" href="../CSS/about.css">
@@ -23,33 +24,22 @@
 </head>
 
 <body>
-    <!-- Header section -->
-    <header>
-        <div class="nav">
-            <div class="name">
-                <a href="../index.html">Po Yu Chao</a>
-            </div>
+        <!-- Header section -->
+      <header class="header">
+        <a href="../index.html" class="ChaoPoYu">PoYu Chao</a>
 
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <img src="../icon/icons8-hamburger-menu-48.png" alt="menu_icon" id="newmenu_icon">
+            <img src="../icon/icons8-close-40.png" alt="close_icon" id="close_icon">
+        </label>
 
-            <ul class="sidebar">
-                <li onclick=hideSidebar()><a href="#"><img src="../icon/icons8-close-40.png" height="36"
-                            viewBox="0 96 960 960" width="36" alt="close"></a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="../index.html#projects">Project</a></li>
-                <li><a href="../index.html#skills">Skills</a></li>
-                <li><a href="./contact.html">Contacts</a></li>
-            </ul>
-            <ul>
-                <li class="hideOnMobile"><a href="./about.html">About</a></li>
-                <li class="hideOnMobile"><a href="#projects">Project</a></li>
-                <li class="hideOnMobile"><a href="#skills">Skills</a></li>
-                <li class="hideOnMobile"><a href="./html/contact.html">Contacts</a></li>
-                <li class="menu_button" onclick=showSidebar() id="hamburgerMenu"><a href="#"><img
-                            src="../icon/icons8-hamburger-menu-50.png" height="36" viewBox="0 96 960 960" width="36"
-                            alt="Menu"></a></li>
-            </ul>
-
-        </div>
+        <nav class="navbar">
+            <a href="./about.html" style="--i:0;">About</a>
+            <a href="../index.html#projects" style="--i:1;">Project</a>
+            <a href="../index.html#skills" style="--i:2;">Skills</a>
+            <a href="../html/contact.html" style="--i:3;">Contact</a>
+        </nav>
 
     </header>
 

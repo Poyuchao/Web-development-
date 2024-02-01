@@ -133,3 +133,8 @@ li a:hover {
  
 }
 
+@media screen and  (max-width: 576px) {
+    .header {
+      min-width:440px;
+    }
+  }

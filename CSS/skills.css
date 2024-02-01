@@ -1,5 +1,19 @@
+:root {
+    --text-color: black; /* Default text color for day mode */
+    --background-color: white; /* Default background color for day mode */
+    /* Define other variables as needed */
+    --progressbar-color:#d13639;
+}
+
+body.night-mode {
+    --text-color: white; /* Text color for night mode */
+    --background-color: #282828; /* Background color for night mode */
+    --progressbar-color:yellowgreen;
+}
+
+
 .skills-section {
-    max-width: 75%; /* Adjust as needed */
+    max-width: 900px; /* Adjust as needed */
     margin: 0 auto; /* Centers the section */
     padding: 4rem 0; /* Add space above and below the section */
   
@@ -9,8 +23,9 @@
     font-size:xx-large;
     margin-bottom: 2rem; /* Space below the section title */
     text-decoration: underline;
-    text-decoration-color: #d13639; /* Color for the underline */
-    text-align:center
+    text-decoration-color: var(--progressbar-color); /* Color for the underline */
+    text-align:center;
+    color:var(--text-color)
 }
 
 .row{
@@ -30,6 +45,7 @@
     font-weight:600;
     font-size:1.3rem;
     position:relative;
+    color:var(--text-color);
 }
 
 .item-text span:last-child{
@@ -38,18 +54,22 @@
 
 .item-text .w-90{
     margin-left:90%;
+    color:var(--text-color);
 }
 
 .item-text .w-80{
     margin-left:80%;
+    color:var(--text-color);
 }
 
 .item-text .w-70{
     margin-left:70%;
+    color:var(--text-color);
 }
 
 .item-text .w-85{
     margin-left:85%;
+    color:var(--text-color);
 }
 
 .progress {
@@ -57,13 +77,13 @@
     border-radius: 10px;
     height: 16px;
     width:100%;
-    background-color: #282828;
+    background-color: var(--text-color);
     overflow:hidden;
    
 }
 
 .progress-bar{
-    background-color: #d13639;
+    background-color: var(--progressbar-color);
     height:100%;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
@@ -131,15 +151,26 @@
     to {width: 85%; }
 }
 /* Responsive adjustments for smaller screens */
-@media screen and (max-width: 768px) {
-    .row {
-        grid-template-columns: 1fr; /* 1 column on smaller screens */
-    }
+@media screen and (max-width: 1024px) {
+    
     .skills-section {
-        max-width:80%; /* Adjust the width to 90% of the viewport width */
+        max-width:70%; /* Adjust the width to 90% of the viewport width */
         padding: 2rem 0; /* Optionally, adjust the padding for smaller screens */
     }
 
 
 }
 
+
+@media screen and (max-width: 576px) {
+    .row {
+        grid-template-columns: 1fr; /* 1 column on smaller screens */
+    }
+  
+    .skills-section {
+        max-width:70%; /* Adjust the width to 90% of the viewport width */
+        padding: 2rem 0; /* Optionally, adjust the padding for smaller screens */
+        
+    }
+
+}

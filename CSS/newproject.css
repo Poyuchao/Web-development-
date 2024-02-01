@@ -1,8 +1,23 @@
+:root {
+    --text-color: black; /* Default text color for day mode */
+    --background-color: white; /* Default background color for day mode */
+    /* Define other variables as needed */
+}
+
+body.night-mode {
+    --text-color: white; /* Text color for night mode */
+    --background-color: #282828; /* Background color for night mode */
+}
+
+
+
+
 .projects-section {
     max-width: 1200px; /* Adjust as needed */
     margin: auto auto; /* Centers the section */
     padding: 4rem 0; /* Add space above and below the section */
-   
+    background-color: var(--background-color);
+    transition: background-color 0.3s ease; /* Smooth transition for the background color */
 }
 
 .projects-section h1 {
@@ -10,7 +25,8 @@
     margin-bottom: 2rem; /* Space below the section title */
     text-decoration: underline;
     text-decoration-color: gold; /* Color for the underline */
-    text-align:center
+    text-align:center;
+    color:var(--text-color)
 }
 
 
@@ -33,7 +49,7 @@
 #slides{
     padding:20px 20px;
     border:3px solid #ccc;
-    background:#fff;
+    background:var(--background-color);
     position:relative;
     z-index:1;
     border-radius:10px;
@@ -92,7 +108,7 @@
     position: relative;
     top: 10px; /* Adjust this value as needed */
     font-weight: bold;
-    
+    color:var(--text-color);
 }
 
 
@@ -100,7 +116,7 @@
 #slides .slide_project2 .slide-content p{
    font-size: 18px;
    font-weight: bold;
-   
+   color:var(--text-color);
 }
 
 
@@ -145,7 +161,7 @@
     padding:20px;
     display:flex;
     justify-content: center;
-    gap:2rem;
+    gap:3rem;
     
     
 }
@@ -155,26 +171,32 @@
     background: none;
     cursor: pointer;
     transition: transform 0.3s ease; /* Animation for smooth scaling */
-}
+    font-size:24px;
+    font-weight:bold;
+    width:30px;
+    height:30px;
+    color:var(--text-color)
+ }
 
 
-#controls button:hover {
+/* #controls button:hover {
     transform: scale(1.1); /* Increase the size by 10% when hovered */
-}
+/* } */ 
 
 
 
 /* break points */
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1024px) {
 
     .projects-section {
         display:flex;
         flex-direction: column;
+        
     }
     
     #slider {
-        width:80%;
+        width:75%;
     }
 
     #slide{
@@ -192,17 +214,44 @@
 
     #slides .slide_project1 .slide-content h2,
     #slides .slide_project2 .slide-content h2 {
-        font-size: calc(12px + 1.5vw); /* Adjust as needed */
+        font-size: calc(11px + 1.5vw); /* Adjust as needed */
     }
 
     #slides .slide_project1 .slide-content p,
     #slides .slide_project2 .slide-content p {
         position:relative;
-        top:10px;
-        font-size: calc(10px + 1vw); /* Adjust as needed */
+        top:-15px;
+        font-size: calc(7px + 1vw); /* Adjust as needed */
     }
   
 }
-   
+@media only screen and (max-width: 992px){
+    .projects-section {
+       min-width:440px;
+       position:relative;
+
+    }
+
+    #slides .slide_project1 .slide-content p,
+    #slides .slide_project2 .slide-content p {
+        position:relative;
+        top:15px;
+        
+    }
+}   
 
 
+@media only screen and (max-width: 440px){
+    .projects-section {
+       min-width:440px;
+       position:relative;
+
+    }
+
+    #slides .slide_project1 .slide-content p,
+    #slides .slide_project2 .slide-content p {
+        position:relative;
+        top:15px;
+        
+    }
+}

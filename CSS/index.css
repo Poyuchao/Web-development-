@@ -1,9 +1,29 @@
+:root {
+    --text-color: black; /* Default text color for day mode */
+    --background-color: white; /* Default background color for day mode */
+    /* Define other variables as needed */
+    --text-web:olive;
+}
+
+body.night-mode {
+    --text-color: white; /* Text color for night mode */
+    --background-color: #282828; /* Background color for night mode */
+    --text-web:yellowgreen;
+}
+
+main {
+    background-color: var(--background-color); /* Use a CSS variable for the background */
+    transition: background-color 0.3s ease; /* Smooth transition for the background color */
+}
+
 .hero-section {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap:4rem;
     padding: 8rem 10rem;
+    background-color: var(--background-color);
+    transition: background-color 0.3s ease; /* Smooth transition for the background color */
     /* border:solid red; */
 }
 
@@ -13,23 +33,25 @@
 
 .text-section h3 {
     margin-bottom: 10px;
-    color: olive;
+    color: var(--text-web);
     font-weight: bolder;
 }
 
 .text-section h1 {
     font-size: 40px;
     margin-bottom: 20px;
+    color: var(--text-color);
 }
 
 .name-highlight {
-    color: #333;
+    color: var(--text-color);
     /* Or any color you want */
     display: inline;
     /* Keeps the span inline */
     animation: none;
     /* If you don't want the highlight to animate separately */
 }
+
 
 .typing-animation {
     /* ensures that the content of the element doesn't wrap to a new line. */
@@ -62,7 +84,7 @@
     }
     /* ends the animation with the element's width at 100%, revealing all the text. */
     to {
-        width: 100%;
+        width: 80%;
     }
 }
 
@@ -86,8 +108,9 @@
 
 .text-section p {
     margin-bottom: 35px;
-    color: #333;
+    color: var(--text-color);
     font-size: 20px; /* Adjusted for smooth scaling */
+   
 }
 
 
@@ -109,6 +132,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: sans-serif;
+    font-weight:bold;
 }
 
 .buttons .button:hover {
@@ -171,7 +195,7 @@
 }
 
 /* breakpoint */
-@media only screen and (max-width:992px) {
+@media only screen and (max-width:1024px) {
     .hero-section {
       
         display:flex;
@@ -200,6 +224,16 @@
        gap:1rem;
     }
     
+    @keyframes typing {
+        /* starts the animation with the element's width at 0. */
+        from {
+            width: 0;
+        }
+        /* ends the animation with the element's width at 100%, revealing all the text. */
+        to {
+            width: 100%;
+        }
+    }
 
 }
 
@@ -254,5 +288,14 @@
 
     }
 
-    
+    @keyframes typing {
+        /* starts the animation with the element's width at 0. */
+        from {
+            width: 0;
+        }
+        /* ends the animation with the element's width at 100%, revealing all the text. */
+        to {
+            width: 100%;
+        }
+    }
 }
