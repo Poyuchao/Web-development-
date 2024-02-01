@@ -248,6 +248,13 @@ body.night-mode {
 
     }
 
+    #slides .slide_project2{
+       
+        background-size: 100% 75%;
+        
+        
+    }
+
     #slides .slide_project1 .slide-content p,
     #slides .slide_project2 .slide-content p {
         position:relative;
