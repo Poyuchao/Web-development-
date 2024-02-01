@@ -12,9 +12,8 @@ body.night-mode {
 
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 20px ;
     transition: background-color 0.3s ease; /* Smooth transition for the background color */
- 
     background-color: white;
 }
 

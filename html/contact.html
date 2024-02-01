@@ -18,11 +18,11 @@
 </head>
 
 <body>
-   
-      <!-- Header section -->
-      <header class="header">
+
+    <!-- Header section -->
+    <header class="header">
         <div class="left-content">
-            <a href="../index.html"class="ChaoPoYu">PoYu Chao</a>
+            <a href="../index.html" class="ChaoPoYu">PoYu Chao</a>
             <img src="../icon/icons8-sun-48.png" alt="Day-and-night-buttom" id="day-night">
         </div>
 
@@ -66,16 +66,18 @@
                 </div>
                 <button type="submit" class="submit-button">Send Message</button>
             </form>
-            
+
         </div>
-        
+
     </main>
 
     <!--footer-->
     <footer>
         <div class="footer-icons">
-            <a href="https://www.instagram.com/killyen444/" target="_blank"><img src="../icon/icons8-instagram-50.png" alt="Instagram"></a>
-            <a href="https://www.linkedin.com/in/poyu-chao" target="_blank"><img src="../icon/icons8-linkedin-logo-50.png" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com/killyen444/" target="_blank"><img src="../icon/icons8-instagram-50.png"
+                    alt="Instagram"></a>
+            <a href="https://www.linkedin.com/in/poyu-chao" target="_blank"><img
+                    src="../icon/icons8-linkedin-logo-50.png" alt="LinkedIn"></a>
             <a href="mailto:YOUR_EMAIL"><img src="../icon/icons8-email-50.png" alt="Email"></a>
         </div>
         <div class="footer-text">
@@ -83,10 +85,17 @@
         </div>
     </footer>
 
-      <!-- JavaScript -->
-      <script>
-        document.querySelector('.submit-button').addEventListener('click', function() {
-            this.classList.toggle('clicked');
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find the button by its class name
+            var submitButton = document.querySelector('.submit-button');
+
+            // Add a click event listener to the button
+            submitButton.addEventListener('click', function () {
+                // Display an alert message when the button is clicked
+                alert('Sorry function still in progress!');
+            });
         });
     </script>
 </body>

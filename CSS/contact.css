@@ -33,26 +33,28 @@ h1 .contact-icon {
     position: relative; 
     max-width: 700px;
     min-height:700px;
-    margin: 100px auto;
+    margin: 140px auto;
     padding: 2rem;
     background: var(--background-color);
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     transition: background-color 0.3s ease; /* Smooth transition for the background color */
-    
+    border:solid white;
 }
 
 .form-row {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    color:var(--text-color)
+    color:var(--text-color);
+    
 }
-
 .input-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
     color:var(--text-color);
+   
+
 }
 
 .input-group label {
@@ -64,9 +66,9 @@ h1 .contact-icon {
 .input-group input[type="email"],
 .input-group textarea {
     padding: 0.5rem;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 4px;
-
+    
 }
 
 .input-group textarea {
@@ -78,20 +80,22 @@ h1 .contact-icon {
     position: absolute; /* Position the button absolutely within its parent */
     bottom: 2rem; /* Distance from the bottom of the container */
     right: 2rem; /* Distance from the left of the container */
-    background-color: #6200ea;
-    color: #fff;
+    background-color: var(--text-color);
+    color: var(--background-color);
     border: none;
     padding: 1rem 2rem;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 10px;
     transition: background-color 0.3s;
     width:auto;
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust for true centering */
+    font-weight:bold;
 }
 
 .submit-button:hover {
-    background-color: #3700b3;
+    transform: translateX(-50%) scale(1.1); /* Zoom in effect */
+    transition: transform 0.3s ease; /* Ensure smooth scaling */
 }
 
 .submit-button::after {

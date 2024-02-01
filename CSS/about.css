@@ -1,41 +1,123 @@
 :root {
-    --text-color: black; /* Default text color for day mode */
-    --background-color: white; /* Default background color for day mode */
+    --text-color: black;
+    /* Default text color for day mode */
+    --background-color: white;
+    /* Default background color for day mode */
     /* Define other variables as needed */
-    --companylink-color:purple;
+    --companylink-color: purple;
 
 }
 
 body.night-mode {
-    --text-color: white; /* Text color for night mode */
-    --background-color: #282828; /* Background color for night mode */
-    --companylink-color:yellowgreen;
+    --text-color: white;
+    /* Text color for night mode */
+    --background-color: #282828;
+    /* Background color for night mode */
+    --companylink-color: yellowgreen;
 }
-body{
+
+body {
     background-color: var(--background-color);
-    transition: background-color 0.3s ease; /* Smooth transition for the background color */
+    transition: background-color 0.3s ease;
+    /* Smooth transition for the background color */
 }
+
 .about-me {
     display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
+    justify-content: center;
+    /* Center the content horizontally */
+    align-items: center;
+    /* Center the content vertically */
     gap: 2rem;
-    padding: 10rem 3rem; /* Add some padding */
+    padding: 10rem 3rem;
+    /* Add some padding */
 }
 
 .content {
     width: 50%;
-    max-width: 550px; /* Set a max-width for the text container */
-    
-    
+    max-width: 550px;
+    /* Set a max-width for the text container */
+
+
+}
+
+.whoamI h2 {
+    color: var(--text-color);
+}
+
+.whoamI span {
+    position: relative;
+}
+
+.whoamI span::before {
+    content: "Web developer";
+    color: #ff7f50;
+    animation: words 8s infinite;
+}
+
+.whoamI span::after {
+    content: "";
+
+    position: absolute;
+    width: calc(100%+8px);
+    animation: typing 3s steps(10) infinite;
+}
+
+
+
+
+@keyframes words {
+
+    0%, 20% { /* 2s for "web developer." including visibility and transition */
+        content: "web developer.";
+    }
+    20%, 40% { /* Pause "web developer." */
+        content: "web developer.";
+    }
+    40%, 60% { /* 2s for "freelancer." including visibility and transition */
+        content: "freelancer.";
+    }
+    60%, 80% { /* Pause "freelancer." */
+        content: "freelancer.";
+    }
+    80%, 100% { /* 2s for "PoYu Chao." including visibility and transition */
+        content: "PoYu Chao.";
+    }
+}
+
+@keyframes typing {
+
+    0%,
+    20% {
+        width: 100%;
+        /* Content is fully visible */
+    }
+
+    25%,
+    45% {
+        width: 0;
+        /* Quick transition to hide content, preparing for next */
+    }
+
+    50%,
+    70% {
+        width: 100%;
+        /* Next content piece is fully visible */
+    }
+
+    75%,
+    95% {
+        width: 0;
+        /* Transition to hide, before showing next */
+    }
 }
 
 .content h1 {
-    color:var(--text-color);
+    color: var(--text-color);
     font-size: 3rem;
-    position:relative;
-    bottom:1.2rem;
- 
+    position: relative;
+    bottom: 1.2rem;
+
 }
 
 .content p {
@@ -44,14 +126,17 @@ body{
     line-height: 1.6;
 }
 
-.company-link{
+.company-link {
     color: var(--companylink-color);
 }
 
 .resume-button {
-    background-color: var(--text-color); /* Gold color */
-    transition: background-color 0.3s ease; /* Smooth transition for the background color */
-    color: var(--background-color); /* Text color */
+    background-color: var(--text-color);
+    /* Gold color */
+    transition: background-color 0.3s ease;
+    /* Smooth transition for the background color */
+    color: var(--background-color);
+    /* Text color */
     padding: 15px 30px;
     text-decoration: none;
     border: none;
@@ -59,22 +144,24 @@ body{
     cursor: pointer;
     font-size: 1rem;
     margin-top: 2rem;
-    position:relative;
-    border: 2px solid black; /* Border for the button */
-    top:1rem;
-    font-weight:bold;
-    
+    position: relative;
+    border: 2px solid black;
+    /* Border for the button */
+    top: 1rem;
+    font-weight: bold;
+
 }
 
-.resume-button:hover{
-    background-color:white;
-    color:black;
+.resume-button:hover {
+    background-color: white;
+    color: black;
     transition: all 0.3s ease;
 }
 
 .profile-picture {
-    width: 50%; /* Take up half of the container */
-    max-width:560px;
+    width: 50%;
+    /* Take up half of the container */
+    max-width: 560px;
 }
 
 .profile-picture img {
@@ -84,35 +171,45 @@ body{
     /* border: 5px solid black; */
 }
 
+@media screen and (max-width:1024px) {}
+
 /* Responsive adjustments for smaller screens */
 @media screen and (max-width: 768px) {
     .about-me {
-        flex-direction: column; /* Stack elements vertically on smaller screens */
+        flex-direction: column;
+        /* Stack elements vertically on smaller screens */
     }
 
-    .content, .profile-picture {
-        width: 90%; /* Use more of the screen for content */
-        max-width: none; /* Remove the max-width on smaller screens */
+    .content,
+    .profile-picture {
+        width: 90%;
+        /* Use more of the screen for content */
+        max-width: none;
+        /* Remove the max-width on smaller screens */
     }
 
     .content {
-        order: 2; /* Ensure the text comes after the image on small screens */
+        order: 2;
+        /* Ensure the text comes after the image on small screens */
     }
 
     .profile-picture {
-        order: 1; /* Ensure the image comes before the text on small screens */
+        order: 1;
+        /* Ensure the image comes before the text on small screens */
     }
 
     /* Assuming .content is the container for .resume-button */
     .content {
         display: flex;
         flex-direction: column;
-        align-items: center; /* This will center the button horizontally */
+        align-items: center;
+        /* This will center the button horizontally */
     }
 
     .resume-button {
         /* Remove any specific positioning if it was there */
         /* Ensure that width and padding are consistent with non-responsive state */
-        margin-top: 15px; /* Add some top margin if needed */
+        margin-top: 15px;
+        /* Add some top margin if needed */
     }
 }
