@@ -1,6 +1,24 @@
+:root {
+    --text-color: black; /* Default text color for day mode */
+    --background-color: white; /* Default background color for day mode */
+    /* Define other variables as needed */
+}
+
+body.night-mode {
+    --text-color: white; /* Text color for night mode */
+    --background-color: #282828; /* Background color for night mode */
+}
+
+
+main {
+    background-color: var(--background-color); /* Use a CSS variable for the background */
+    transition: background-color 0.3s ease; /* Smooth transition for the background color */
+}
+
 
 h1{
     text-align: center;
+    color:var(--text-color)
 }
 
 h1 .contact-icon {
@@ -17,8 +35,9 @@ h1 .contact-icon {
     min-height:700px;
     margin: 100px auto;
     padding: 2rem;
-    background: #fff;
+    background: var(--background-color);
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease; /* Smooth transition for the background color */
     
 }
 
@@ -26,12 +45,14 @@ h1 .contact-icon {
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    color:var(--text-color)
 }
 
 .input-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
+    color:var(--text-color);
 }
 
 .input-group label {
@@ -45,6 +66,7 @@ h1 .contact-icon {
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
+
 }
 
 .input-group textarea {
@@ -55,7 +77,7 @@ h1 .contact-icon {
 .submit-button {
     position: absolute; /* Position the button absolutely within its parent */
     bottom: 2rem; /* Distance from the bottom of the container */
-    left: 2rem; /* Distance from the left of the container */
+    right: 2rem; /* Distance from the left of the container */
     background-color: #6200ea;
     color: #fff;
     border: none;
@@ -63,6 +85,9 @@ h1 .contact-icon {
     cursor: pointer;
     border-radius: 4px;
     transition: background-color 0.3s;
+    width:auto;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for true centering */
 }
 
 .submit-button:hover {
@@ -85,25 +110,38 @@ h1 .contact-icon {
 
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
-    .form-row {
-        flex-direction: column;
-    }
-}
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     .submit-button {
-        position: static; /* Default static position */
-        display: block; /* Full width */
-        width: 100%; /* Full width on smaller screens */
-        margin-top: 1rem; /* Space above the button */
+        position: absolute; /* Maintain absolute positioning */
+        bottom: 2rem; /* Keep the distance from the bottom */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Adjust for true centering */
+        width: auto; /* Maintain the width */
     }
     .contact-form-container {
         max-width:80%; /* Adjust the width to 90% of the viewport width */
        
     }
-   
+    .form-row {
+        flex-direction: column;
+    }
 }
 
 
+@media screen and (max-width: 440px) {
+    .contact-form-container {
+        width: 90%; /* Adjust the width as needed */
+        
+        padding: 2rem 1rem;  /* Adjust padding as needed for smaller screens */
+    }
+    .submit-button {
+        position: absolute; /* Maintain absolute positioning */
+        bottom: 2rem; /* Keep the distance from the bottom */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Adjust for true centering */
+        width: auto; /* Maintain the width */
+    }
+    
+}
 
