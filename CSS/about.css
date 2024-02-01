@@ -1,27 +1,50 @@
+:root {
+    --text-color: black; /* Default text color for day mode */
+    --background-color: white; /* Default background color for day mode */
+    /* Define other variables as needed */
+    --companylink-color:purple;
+
+}
+
+body.night-mode {
+    --text-color: white; /* Text color for night mode */
+    --background-color: #282828; /* Background color for night mode */
+    --companylink-color:yellowgreen;
+}
+body{
+    background-color: var(--background-color);
+}
 .about-me {
     display: flex;
     justify-content: center; /* Center the content horizontally */
     align-items: center; /* Center the content vertically */
     gap: 2rem;
-    padding: 8rem 3rem; /* Add some padding */
+    padding: 10rem 3rem; /* Add some padding */
 }
 
 .content {
     width: 50%;
-    max-width: 500px; /* Set a max-width for the text container */
-    text-align: left; /* Align text to the left */
+    max-width: 550px; /* Set a max-width for the text container */
+    
+    
 }
 
 .content h1 {
-    color: #333;
+    color:var(--text-color);
     font-size: 3rem;
-    margin-bottom: 1rem;
+    position:relative;
+    bottom:1.2rem;
+ 
 }
 
 .content p {
-    color: #666;
+    color: var(--text-color);
     font-size: 1.2rem;
     line-height: 1.6;
+}
+
+.company-link{
+    color: var(--companylink-color);
 }
 
 .resume-button {
@@ -30,15 +53,25 @@
     padding: 15px 30px;
     text-decoration: none;
     border: none;
-    border-radius: 5px;
+    border-radius: 30px;
     cursor: pointer;
     font-size: 1rem;
     margin-top: 2rem;
+    position:relative;
+    border: 2px solid black; /* Border for the button */
+    top:1rem;
+    font-weight:bold;
+}
+
+.resume-button:hover{
+    background-color:white;
+    color:black;
+    transition: all 0.3s ease;
 }
 
 .profile-picture {
     width: 50%; /* Take up half of the container */
-    max-width:600px;
+    max-width:560px;
 }
 
 .profile-picture img {
@@ -67,7 +100,16 @@
         order: 1; /* Ensure the image comes before the text on small screens */
     }
 
+    /* Assuming .content is the container for .resume-button */
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* This will center the button horizontally */
+    }
+
     .resume-button {
-        padding: 10px 20px;
+        /* Remove any specific positioning if it was there */
+        /* Ensure that width and padding are consistent with non-responsive state */
+        margin-top: 15px; /* Add some top margin if needed */
     }
 }
