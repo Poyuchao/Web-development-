@@ -181,6 +181,7 @@ body{
     to {
         transform: translateX(0) rotate(360deg);
         opacity: 1;
+        /* A blur effect of 5 pixels is applied, making the element appear unfocused. */
         filter: blur(0);
         border-radius: 0;
     }

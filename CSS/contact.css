@@ -116,6 +116,7 @@ h1 .contact-icon {
 /* Responsive adjustments */
 
 @media screen and (max-width: 1024px) {
+ 
     .submit-button {
         position: absolute; /* Maintain absolute positioning */
         bottom: 2rem; /* Keep the distance from the bottom */
