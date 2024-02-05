@@ -187,6 +187,10 @@ body {
     border-radius: 50%; /* Rounds the corners of the image to make it circular. */
 }
 
+/* creates a flip effect where the .flipper container rotates around 
+its Y-axis when the .flip-container is hovered, switching from 
+displaying the .front element to the .back element.  */
+
 .flip-container {
     /* Gives a 3D effect depth when the child elements are rotated. */
     perspective: 1000px;
@@ -242,15 +246,7 @@ body {
         flex-direction: column;
         /* Stack elements vertically on smaller screens */
     }
-    .front,
-    .back {
-        backface-visibility: hidden;
-        position: none;
-        
-        
-        /* Keep the other properties unchanged */
     
-    }
 
     .content {
         order: 2;
