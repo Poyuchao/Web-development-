@@ -34,12 +34,14 @@ body {
 }
 
 .content {
-    width: 50%;
+    width: 100%;
+    height: 100%;
     max-width: 550px;
     /* Set a max-width for the text container */
 
-
 }
+
+
 
 .whoamI h2 {
     color: var(--text-color);
@@ -68,19 +70,33 @@ body {
 
 @keyframes words {
 
-    0%, 20% { /* 2s for "web developer." including visibility and transition */
+    0%,
+    20% {
+        /* 2s for "web developer." including visibility and transition */
         content: "web developer.";
     }
-    20%, 40% { /* Pause "web developer." */
+
+    20%,
+    40% {
+        /* Pause "web developer." */
         content: "web developer.";
     }
-    40%, 60% { /* 2s for "freelancer." including visibility and transition */
+
+    40%,
+    60% {
+        /* 2s for "freelancer." including visibility and transition */
         content: "freelancer.";
     }
-    60%, 80% { /* Pause "freelancer." */
+
+    60%,
+    80% {
+        /* Pause "freelancer." */
         content: "freelancer.";
     }
-    80%, 100% { /* 2s for "PoYu Chao." including visibility and transition */
+
+    80%,
+    100% {
+        /* 2s for "PoYu Chao." including visibility and transition */
         content: "PoYu Chao.";
     }
 }
@@ -159,22 +175,81 @@ body {
 }
 
 .profile-picture {
-    width: 50%;
-    /* Take up half of the container */
-    max-width: 560px;
+    width: 100%; /* The container takes the full width of its parent. */
+    max-width: 560px; /* The maximum width is limited to 560px. */
+    height: auto; /* Height adjusts automatically to the content, maintaining aspect ratio of images. */
+    position: relative; /* Sets positioning context for absolutely positioned child elements. */
 }
 
 .profile-picture img {
-    width: 100%;
-    height: auto;
-    border-radius: 50%;
-    /* border: 5px solid black; */
+    width: 100%; /* Image width stretches to fill the container width. */
+    height: auto; /* Height adjusts automatically, maintaining the image's aspect ratio. */
+    border-radius: 50%; /* Rounds the corners of the image to make it circular. */
 }
 
-@media screen and (max-width:1025px) {
+.flip-container {
+    /* Gives a 3D effect depth when the child elements are rotated. */
+    perspective: 1000px;
+    width: 100%; 
+    height: 100%; 
+   
+}
+
+.flipper {
+/* Animates the transform property over 0.6 seconds for smooth flipping. */
+    transition: transform 0.6s; 
+    transform-style: preserve-3d;
+}
+
+.front, .back {
+    /* Both front and back sides take the full width of their parent (the flipper). */
+    width: 100%; 
+    /* Both sides take the full height of their parent. */
+    height: 100%; 
+    /* Hides the side of the element not facing the screen. */
+    backface-visibility: hidden; 
+    
+}
+
+.front {
+    /* Initially, the front side is not rotated. */
+    transform: rotateY(0deg);
+    /* Ensures the front side is stacked above the back side. */
+    z-index: 2;
+}
+
+.back {
+    /* The back side is rotated 180 degrees around the Y-axis, 
+    making it initially invisible. */
+    transform: rotateY(180deg);
+    /* Positioned absolutely to overlay directly on top of the front side. */
+    position: absolute; 
+    /* Aligns the top edge of the back side with the top of its container. */
+    top: 0; 
+    z-index: 1;
+}
+
+
+  
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+    /* On hover, the flipper (and thus its children) is rotated 180 degrees around the Y-axis, 
+    revealing the back side. */
+    transform: rotateY(180deg);
+  }
+
+@media screen and (max-width:1024px) {
     .about-me {
         flex-direction: column;
         /* Stack elements vertically on smaller screens */
+    }
+    .front,
+    .back {
+        backface-visibility: hidden;
+        position: none;
+        
+        
+        /* Keep the other properties unchanged */
+    
     }
 
     .content {
