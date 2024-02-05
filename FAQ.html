@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        
+        .faq-container {
+            width: 75%;
+            margin: 2rem auto;
+            padding: 20px;
+        }
+        
+        details {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 6px #aaa;
+        }
+        
+        summary {
+            font-weight: bold;
+            margin: -10px -10px 10px;
+            padding: 10px;
+            background-color: #efefef;
+            border-radius: 5px 5px 0 0;
+            cursor: pointer;
+        }
+        
+        summary:hover {
+            background-color: #e0e0e0;
+        }
+        
+        details[open] {
+            padding: 10px;
+        }
+        
+        details[open] summary {
+            border-bottom: 1px solid #ddd;
+        }
+        
+        p {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="faq-container">
+        <h1>FAQ - Frequently Asked Questions</h1>
+        
+        <details>
+            <summary>What services do you offer?</summary>
+            <p>I offer web design, development, and SEO optimization services.</p>
+        </details>
+        
+        <details>
+            <summary>How can I contact you?</summary>
+            <p>You can contact me via email at example@example.com or through the contact form on my website.</p>
+        </details>
+        <details>
+            <summary>What is your area of expertise?</summary>
+            <p>My primary areas of expertise are in web development, particularly in front-end technologies such as HTML, CSS, and JavaScript, as well as back-end frameworks like Node.js.</p>
+        </details>
+        <details>
+            <summary>Do you contribute to open source projects?</summary>
+            <p>Yes, I actively contribute to open source projects. I believe in the philosophy of open-source software and enjoy collaborating with the community. You can find my contributions on my GitHub profile.</p>
+        </details>
+        <details>
+            <summary>What kind of projects are you interested in working on?</summary>
+            <p>I'm interested in projects that challenge me and allow me to leverage my skills in web development and software engineering. I especially enjoy projects that focus on user experience and accessibility.</p>
+        </details>
+    </div>
+</body>
+</html>
