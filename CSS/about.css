@@ -171,7 +171,29 @@ body {
     /* border: 5px solid black; */
 }
 
-@media screen and (max-width:1024px) {}
+@media screen and (max-width:1025px) {
+    .about-me {
+        flex-direction: column;
+        /* Stack elements vertically on smaller screens */
+    }
+
+    .content {
+        order: 2;
+        /* Ensure the text comes after the image on small screens */
+    }
+
+    .profile-picture {
+        order: 1;
+        /* Ensure the image comes before the text on small screens */
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* This will center the button horizontally */
+    }
+}
 
 /* Responsive adjustments for smaller screens */
 @media screen and (max-width: 768px) {
