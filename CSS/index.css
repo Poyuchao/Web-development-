@@ -162,7 +162,7 @@ body{
     /* Maintain the aspect ratio */
     object-fit: cover;
     /* This will cover the area, could be changed to 'contain' based on your needs */
-    border-radius: 25px;
+    border-radius: 50%;
     
 }
 
@@ -179,7 +179,6 @@ body{
         border-radius: 50%;
     }
     to {
-        transform: translateX(0) rotate(360deg);
         opacity: 1;
         /* A blur effect of 5 pixels is applied, making the element appear unfocused. */
         filter: blur(0);
@@ -190,8 +189,8 @@ body{
 .image-section {
     
    animation-name: imagefromleft;
-   animation-duration:2s;
-   animation-timing-function:ease-in;
+   animation-duration:2.5s;
+   animation-timing-function:ease-in-out;
    animation-delay:0s;
    animation-iteration-count:1;
    animation-direction:normal;
@@ -199,6 +198,35 @@ body{
   
 
 }
+
+@keyframes textfromright  {
+    from {
+      
+        transform: translateX(200%) rotate(0);
+        opacity: 0;
+        filter: blur(5px);
+       
+    }
+    to {
+        opacity: 1;
+        /* A blur effect of 5 pixels is applied, making the element appear unfocused. */
+        filter: blur(0);
+     
+    }
+}
+
+.text-section {
+    
+    animation-name: textfromright;
+    animation-duration:2.5s;
+    animation-timing-function:ease-in-out;
+    animation-delay:0s;
+    animation-iteration-count:1;
+    animation-direction:normal;
+    animation-fill-mode:none;
+   
+ 
+ }
 
 /* breakpoint */
 @media only screen and (max-width:1024px) {
