@@ -24,8 +24,8 @@ body{
 .hero-section {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap:4rem;
+    justify-content:space-around;
+    gap:2rem;
     padding: 8rem 10rem;
     background-color: var(--background-color);
     transition: background-color 0.3s ease; /* Smooth transition for the background color */
@@ -33,8 +33,10 @@ body{
 }
 
 .text-section {
-    width: 60%;
+    width: 50%;
 }
+
+
 
 .text-section h3 {
     margin-bottom: 10px;
@@ -89,7 +91,7 @@ body{
     }
     /* ends the animation with the element's width at 100%, revealing all the text. */
     to {
-        width: 80%;
+        width: 85%;
     }
 }
 
