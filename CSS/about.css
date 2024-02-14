@@ -128,6 +128,7 @@ body {
     }
 }
 
+
 .content h1 {
     color: var(--text-color);
     font-size: 3rem;
@@ -145,6 +146,7 @@ body {
 .company-link {
     color: var(--companylink-color);
 }
+
 
 .resume-button {
     background-color: var(--text-color);
@@ -165,7 +167,8 @@ body {
     /* Border for the button */
     top: 1rem;
     font-weight: bold;
-
+    /* Pulse animation */
+   
 }
 
 .resume-button:hover {

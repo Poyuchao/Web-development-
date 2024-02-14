@@ -48,6 +48,7 @@ body{
     font-size: 40px;
     margin-bottom: 20px;
     color: var(--text-color);
+  
 }
 
 .name-highlight {
@@ -80,6 +81,20 @@ body{
                blink-caret .75s step-end 3.5s,
                fadeOutCursor 1s 4s forwards;
 }
+
+
+/* Adjusted for a slower fade-in animation */
+/* .hero-section, .skills-section, .footer-icons, .footer-text{
+    opacity: 0; 
+    transform: translateY(20px);
+    transition: opacity 2s ease-in-out, transform 2s ease-in-out; /* Slower transition */
+
+
+/* State after scrolling into view remains the same */
+/* .visible {
+    opacity: 1;
+    transform: translateY(0);
+} */
 
 
 
@@ -140,6 +155,7 @@ body{
     transition: all 0.3s ease;
     font-family: sans-serif;
     font-weight:bold;
+    
 }
 
 .buttons .button:hover {

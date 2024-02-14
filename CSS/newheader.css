@@ -27,11 +27,27 @@
 
 }
 
+/* Pulse Effect */
+@keyframes botton-pulse {
+    0% {
+        transform: scale(0.9);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(0.9);
+    }
+}
+
 /* day and night button */
 #day-night {
     cursor: pointer;
- 
+    animation: botton-pulse 2s infinite;
 }
+
+
+
 
 @keyframes flyRight {
     from {
