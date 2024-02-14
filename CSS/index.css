@@ -13,12 +13,12 @@ body.night-mode {
 
 main {
     background-color: var(--background-color); /* Use a CSS variable for the background */
-    transition: background-color 0.3s ease; /* Smooth transition for the background color */
+    
 }
 
 body{
      background-color: var(--background-color); /* Use a CSS variable for the background */
-    transition: background-color 0.3s ease; /* Smooth transition for the background color */
+    
 }
 
 .hero-section {
@@ -28,7 +28,7 @@ body{
     gap:2rem;
     padding: 8rem 10rem;
     background-color: var(--background-color);
-    transition: background-color 0.3s ease; /* Smooth transition for the background color */
+   
     /* border:solid red; */
 }
 
@@ -83,18 +83,18 @@ body{
 }
 
 
-/* Adjusted for a slower fade-in animation */
-/* .hero-section, .skills-section, .footer-icons, .footer-text{
+/*Adjusted for a slower fade-in animation */
+.image-section, .buttons, .text-section-container, .project-section, .skills-section, .footer-icons, .footer-text{
     opacity: 0; 
     transform: translateY(20px);
     transition: opacity 2s ease-in-out, transform 2s ease-in-out; /* Slower transition */
-
+}
 
 /* State after scrolling into view remains the same */
-/* .visible {
+.visible {
     opacity: 1;
     transform: translateY(0);
-} */
+}
 
 
 

@@ -5,16 +5,16 @@
 }
 
 body.night-mode {
-    --text-color: black; /* Text color for night mode */
-    --background-color: white; /* Background color for night mode */
+    --text-color: #fff; /* Text color for night mode */
+    --background-color: #282828; /* Background color for night mode */
 }
 
 
 footer {
     text-align: center;
     padding: 20px ;
-    transition: background-color 0.3s ease; /* Smooth transition for the background color */
-    background-color: white;
+    
+    background-color: var(--background-color);
 }
 
 .footer-icons a {
@@ -31,5 +31,5 @@ footer {
 .footer-text {
     margin-top: 20px; /* Space above the text */
     padding-bottom: 2rem;
-    color: black;
+    color: var(--text-color);
 }

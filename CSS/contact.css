@@ -12,7 +12,7 @@ body.night-mode {
 
 main {
     background-color: var(--background-color); /* Use a CSS variable for the background */
-    transition: background-color 0.3s ease; /* Smooth transition for the background color */
+   
 }
 
 
@@ -37,7 +37,7 @@ h1 .contact-icon {
     padding: 2rem;
     background: var(--background-color);
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    transition: background-color 0.3s ease; /* Smooth transition for the background color */
+   
     border:solid white;
 }
 
@@ -111,6 +111,17 @@ h1 .contact-icon {
     /* Additional styles for the visible state */
 }
 
+.contact-form-container, .footer-icons, .footer-text{
+    opacity: 0; 
+    transform: translateY(20px);
+    transition: opacity 2s ease-in-out, transform 2s ease-in-out; /* Slower transition */
+}
+
+/* State after scrolling into view remains the same */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 
 /* Responsive adjustments */

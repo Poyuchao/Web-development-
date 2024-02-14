@@ -7,6 +7,7 @@
 body.night-mode {
     --text-color: white; /* Text color for night mode */
     --background-color: #282828; /* Background color for night mode */
+   
 }
 
 
@@ -17,7 +18,6 @@ body.night-mode {
     margin: auto auto; /* Centers the section */
     padding: 4rem 0; /* Add space above and below the section */
     background-color: var(--background-color);
-    transition: background-color 0.3s ease; /* Smooth transition for the background color */
 }
 
 .projects-section h1 {
@@ -53,6 +53,7 @@ body.night-mode {
     position:relative;
     z-index:1;
     border-radius:10px;
+   
 }
 
 #overflow {
