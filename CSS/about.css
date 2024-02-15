@@ -255,6 +255,89 @@ displaying the .front element to the .back element.  */
     transform: rotateY(180deg);
   }
 
+
+  @keyframes textFromLeft {
+    from {
+      transform: translateX(-1000px) rotateY(-30deg);
+      opacity: 0;
+      filter: blur(5px);
+    }
+    to {
+      transform: translateX(0) rotateY(0deg);
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+  
+  .whoamI h2, .content p {
+    animation: textFromLeft 2.5s ease-in-out forwards;
+    transform-origin: left center; /* Ensures the rotation pivots from the left */
+  }
+  
+  
+
+  @keyframes imageFromRight {
+    0% {
+      transform: translateX(1000px) rotate(360deg);
+      opacity: 0;
+      filter: blur(5px);
+    }
+    70% {
+      transform: translateX(-15px) rotate(0deg); /* Overshoot the final position slightly */
+      opacity: 0.7;
+    }
+    100% {
+      transform: translateX(0) rotate(0deg);
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+  
+  .front {
+    animation: imageFromRight 2.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+  
+
+  @keyframes h1FromTop {
+    from {
+      transform: translateY(-1000px);
+      opacity: 0;
+    }
+    60% {
+      transform: translateY(25px); /* Move past the final position */
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .content h1 {
+    animation: h1FromTop 2.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+  }
+  
+  
+  @keyframes buttonsFromBottom {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .resume-button {
+    animation: buttonsFromBottom 4s ease-in-out forwards;
+    position: relative; /* Needed for the pseudo-elements */
+  }
+  
+  
+
+  
+  
+
 @media screen and (max-width:1024px) {
     .about-me {
         flex-direction: column;

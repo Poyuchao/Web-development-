@@ -1,6 +1,6 @@
 :root {
     --text-color: black; /* Default text color for day mode */
-    --background-color: white; /* Default background color for day mode */
+    --background-color: #ffffff; /* Default background color for day mode */
     /* Define other variables as needed */
     --text-web:olive;
 }
@@ -45,7 +45,7 @@ body{
 }
 
 .text-section h1 {
-    font-size: 40px;
+    font-size: clamp(16px,5vw,40px);
     margin-bottom: 20px;
     color: var(--text-color);
   
@@ -188,63 +188,85 @@ body{
     transform: scale(1.05); /* Zooms in the image slightly */
 }
 
-@keyframes imagefromleft {
-    from {
-      
-        transform: translateX(-100%) rotate(0);
-        opacity: 0;
-        filter: blur(5px);
-        border-radius: 50%;
+@keyframes imageFromLeft {
+    0% {
+      transform: translateX(-1000px) rotate(-360deg);
+      opacity: 0;
+      filter: blur(5px);
+      border-radius: 50%;
     }
-    to {
-        opacity: 1;
-        /* A blur effect of 5 pixels is applied, making the element appear unfocused. */
-        filter: blur(0);
-        border-radius: 0;
+    70% {
+      transform: translateX(5%) rotate(0deg); /* Slightly overshoots the final position */
+      opacity: 1;
+      filter: blur(0);
+      border-radius: 0;
     }
-}
-
-.image-section {
-    
-   animation-name: imagefromleft;
-   animation-duration:2.5s;
-   animation-timing-function:ease-in-out;
-   animation-delay:0s;
-   animation-iteration-count:1;
-   animation-direction:normal;
-   animation-fill-mode:none;
+    100% {
+      transform: translateX(0) rotate(0deg); /* Settles back to the final position */
+      opacity: 1;
+      filter: blur(0);
+      border-radius: 0;
+    }
+  }
+  
+  .image-section {
+    animation: imageFromLeft 2.7s cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards;
+  }
+  
   
 
-}
-
-@keyframes textfromright  {
+  @keyframes textFromRight {
     from {
-      
-        transform: translateX(200%) rotate(0);
+        transform: translateX(1000px) rotate(30deg);
         opacity: 0;
         filter: blur(5px);
-       
     }
     to {
+        transform: translateX(0) rotate(0deg);
         opacity: 1;
-        /* A blur effect of 5 pixels is applied, making the element appear unfocused. */
         filter: blur(0);
-     
     }
 }
+  
+  .text-section-container {
+    animation: textFromRight 2.5s ease-in-out forwards;
+  }
 
-.text-section {
-    
-    animation-name: textfromright;
-    animation-duration:2.5s;
-    animation-timing-function:ease-in-out;
-    animation-delay:0s;
-    animation-iteration-count:1;
-    animation-direction:normal;
-    animation-fill-mode:none;
-   
+  @keyframes h3FromTop {
+    from {
+      transform: translateY(-1000px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .text-section-container h3 {
+    animation: h3FromTop 2.5s ease-in-out forwards;
+  }
+  
+  @keyframes buttonsFromBottom {
+    from {
+      transform: translateY(1000px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .buttons {
+    animation: buttonsFromBottom 2.5s ease-in-out forwards;
+  }
+
+
+
+
  
- }
+
 
 /* breakpoint */
 @media only screen and (max-width:1024px) {
@@ -290,6 +312,8 @@ body{
 }
 
 @media only screen and (max-width: 768px) {
+    
+
     .hero-section{
       
         flex-direction: column;
@@ -298,6 +322,7 @@ body{
 
     .projects-section{
         flex-direction:column;
+        padding:16px 0;
     } 
 
     .text-section, .project-text, .project-image {
@@ -350,4 +375,6 @@ body{
             width: 100%;
         }
     }
+
+  
 }

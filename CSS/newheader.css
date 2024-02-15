@@ -1,3 +1,16 @@
+:root {
+    --text-color: black; /* Default text color for day mode */
+    --background-color: white; /* Default background color for day mode */
+    /* Define other variables as needed */
+
+}
+
+body.night-mode {
+    --text-color: white; /* Text color for night mode */
+    --background-color: #282828; /* Background color for night mode */
+
+}
+
 .header {
     position:fixed;
     top:0;
@@ -20,7 +33,7 @@
     left:0;
     width:100%;
     height:100%;
-    background-color:white;
+    background-color:var(--background-color);
     backdrop-filter:blur(50px);
     z-index: -1;
     opacity:0.8;
@@ -64,20 +77,42 @@
 
 .ChaoPoYu{
     font-size:2rem;
-    color:black;
+    color:var(--text-color);
     text-decoration:none;
     font-weight:700;
     white-space: nowrap;
   
 }
 
-.navbar a{
-    font-size:1.15rem;
-    color:black;
-    text-decoration:none;
-    font-weight:500;
-    margin-left:2.5rem;
+.navbar a {
+    position: relative; /* Ensure the pseudo-element is positioned relative to the link */
+    font-size: 1.15rem;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2.5rem;
+    overflow: hidden;
+    transition: color 0.3s ease;
 }
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Adjust as needed to change the distance from the text */
+    left: 50%;
+    width: 0;
+    height: 2px; /* Height of the underline */
+    background-color:#f08a5d; /* Color of the underline */
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar a:hover::after {
+    width: 100%; /* Full width of the text */
+    left: 0;
+    transform: translateX(0%);
+}
+
 
 #check{
     display:none;

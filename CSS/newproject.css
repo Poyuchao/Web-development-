@@ -26,7 +26,8 @@ body.night-mode {
     text-decoration: underline;
     text-decoration-color: gold; /* Color for the underline */
     text-align:center;
-    color:var(--text-color)
+    color:var(--text-color);
+    position:relative
 }
 
 

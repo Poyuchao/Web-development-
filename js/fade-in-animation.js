@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 // Add 'visible' class to trigger animations -> visible animation
                 entry.target.classList.add('visible');
-             } else {
+             } 
                 // Optional: Remove 'visible' class if you want animations to reset when the element goes out of view
-                 entry.target.classList.remove('visible');
-             }
+                //  entry.target.classList.remove('visible');
+          
          });
     }, { threshold: 0.1 }); // Trigger when 10% of the element is in view
 
