@@ -84,7 +84,7 @@ body{
 
 
 /*Adjusted for a slower fade-in animation */
-.image-section, .buttons, .text-section-container, .project-section, .skills-section, .footer-icons, .footer-text{
+.image-section, .buttons, .text-section-container, .projects-section, .skills-section, .footer-icons, .footer-text{
     opacity: 0; 
     transform: translateY(20px);
     transition: opacity 2s ease-in-out, transform 2s ease-in-out; /* Slower transition */
